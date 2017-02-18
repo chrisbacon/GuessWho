@@ -53,7 +53,7 @@ class GuessWho extends React.Component {
 
             <div>
                 <AnswerPanel/>
-                <PersonBoard pokemons={this.state.pokemons}/>
+                <PokeBoard pokemons={this.state.pokemons}/>
                 <QuestionPanel/>
             </div>
 

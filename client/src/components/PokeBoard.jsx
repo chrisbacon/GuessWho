@@ -1,4 +1,5 @@
 import React from 'react';
+import Pokemon from './Pokemon.jsx';
 
 class PokeBoard extends React.Component {
 
@@ -8,10 +9,19 @@ class PokeBoard extends React.Component {
 
     render() {
 
+        const pokeComps = this.props.pokemons.map(function(p, index) {
+
+            return <Pokemon pokemon={p} key = {index}/> 
+            
+            }
+        )
+
+        console.log(pokeComps)
+
         return (
 
             <div>
-
+                {pokeComps}
             </div>
 
             )

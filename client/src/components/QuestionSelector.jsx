@@ -7,10 +7,14 @@ class QuestionSelector extends React.Component {
     }
 
     render() {
-        
-        // const options = this.props.fieldNames.map(function(fieldName, index) {
-        //     <option value={fieldName}>{fieldName}</option>
-        // })
+
+        // const options = {
+        //     array: arrayQuestions,
+        //     number: numberQuestions,
+        //     text: textQuestion
+        // }
+
+        // const SpecificOptions = options[this.prop.type]
 
         return(
 

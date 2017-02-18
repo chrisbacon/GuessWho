@@ -26,7 +26,11 @@ class FieldObserver {
     }
 
     getFieldNames() {
-        return Object.keys(this.fieldRecords)
+        return Object.keys(this.fieldRecords);
+    }
+
+    getFieldRecords() {
+        return new Object(this.fieldRecords);
     }
 
 }

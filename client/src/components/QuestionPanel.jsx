@@ -1,6 +1,14 @@
 import React from 'react';
 
-class QuestionPanel extends React.component {
+class QuestionPanel extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render () {
+        return <div/>
+    }
 
 }
 

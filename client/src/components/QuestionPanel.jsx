@@ -16,11 +16,11 @@ class QuestionPanel extends React.Component {
 
     render () {
         return (
-
-            <QuestionSelector/>
-            <ParameterSelector/>
-            <Button/>
-
+            <form>
+                <QuestionSelector/>
+                <ParameterSelector/>
+                <button></button>
+            </form>
             )
     }
 

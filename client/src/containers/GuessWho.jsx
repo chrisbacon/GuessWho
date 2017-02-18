@@ -5,6 +5,7 @@ import PokeBoard from '../components/PokeBoard.jsx';
 import QuestionPanel from '../components/QuestionPanel.jsx';
 
 import Pokemon from '../models/Pokemon.js';
+import FieldObserver from '../models/FieldObserver.js'
 
 class GuessWho extends React.Component {
 
@@ -18,6 +19,8 @@ class GuessWho extends React.Component {
             answer: null
 
         }
+
+        this.fieldObserver = new FieldObserver();
     }
 
     getPokemon(id) {
@@ -29,6 +32,7 @@ class GuessWho extends React.Component {
                 const data = JSON.parse(request.responseText);
 
                 const pokemon = new Pokemon(data);
+                this.fieldObserver.examine(pokemon);
 
                 const pokemons = this.state.pokemons
 
@@ -48,7 +52,8 @@ class GuessWho extends React.Component {
     }
 
     render() {
-
+        console.log(this.fieldObserver.getFieldNames())
+        console.log(this.fieldObserver.fieldRecords)
         return(
 
             <div>

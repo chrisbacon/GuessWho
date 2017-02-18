@@ -43,8 +43,8 @@ class GuessWho extends React.Component {
 
     componentDidMount() {
         this.getPokemon(1)
-        this.getPokemon(2)
-        this.getPokemon(3)
+        this.getPokemon(4)
+        this.getPokemon(7)
     }
 
     render() {

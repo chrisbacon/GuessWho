@@ -25,8 +25,6 @@ class Pokemon extends React.Component {
 
             const SpecificField = fields[field.type];
 
-            console.log(SpecificField, field.fieldName, field.data)
-
             lis.push(<SpecificField fieldName={field.fieldName} data={field.data}/>);
         }
 

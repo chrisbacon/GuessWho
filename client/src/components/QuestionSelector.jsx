@@ -7,9 +7,16 @@ class QuestionSelector extends React.Component {
     }
 
     render() {
+        
+        // const options = this.props.fieldNames.map(function(fieldName, index) {
+        //     <option value={fieldName}>{fieldName}</option>
+        // })
+
         return(
 
-            <select>            </select>
+            <select>
+               
+            </select>
 
             )
     }

@@ -52,14 +52,12 @@ class GuessWho extends React.Component {
     }
 
     render() {
-        console.log(this.fieldObserver.getFieldNames())
-        console.log(this.fieldObserver.fieldRecords)
         return(
 
             <div>
                 <AnswerPanel/>
                 <PokeBoard pokemons={this.state.pokemons}/>
-                <QuestionPanel/>
+                <QuestionPanel fieldNames = {this.fieldObserver.getFieldNames()}/>
             </div>
 
             )

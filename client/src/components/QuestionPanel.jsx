@@ -1,7 +1,7 @@
 import React from 'react';
 
 import QuestionSelector from './QuestionSelector.jsx';
-import ParameterSelector from './ParameterSelector.jsx';
+import FieldSelector from './FieldSelector.jsx';
 
 class QuestionPanel extends React.Component {
 
@@ -18,7 +18,7 @@ class QuestionPanel extends React.Component {
         return (
             <form>
                 <QuestionSelector/>
-                <ParameterSelector/>
+                <FieldSelector fieldNames={this.props.fieldNames} />
                 <button></button>
             </form>
             )

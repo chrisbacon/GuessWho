@@ -1,4 +1,7 @@
 import React from 'react';
+import ArrayField from './ArrayField.jsx'
+import TextField from './TextField.jsx'
+import ImageField from './ImageField.jsx'
 
 class Pokemon extends React.Component {
 
@@ -8,10 +11,23 @@ class Pokemon extends React.Component {
 
     render () {
 
+        const fields = {
+            array: ArrayField,
+            text: TextField,
+            image: ImageField
+        }
+
         const lis = [];
 
-        for (const field in this.props.pokemon) {
-            lis.push(<li>{"" + this.props.pokemon[field]}</li>);
+        for (const key in this.props.pokemon) {
+
+            const field = this.props.pokemon[key]; 
+
+            const SpecificField = fields[field.type];
+
+            console.log(SpecificField, field.fieldName, field.data)
+
+            lis.push(<SpecificField fieldName={field.fieldName} data={field.data}/>);
         }
 
         return (

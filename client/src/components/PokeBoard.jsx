@@ -16,8 +16,6 @@ class PokeBoard extends React.Component {
             }
         )
 
-        console.log(pokeComps)
-
         return (
 
             <div>

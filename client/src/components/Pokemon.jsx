@@ -9,6 +9,15 @@ class Pokemon extends React.Component {
         super(props);
     }
 
+    handleClick(event) {
+        const div = event.currentTarget
+        if (div.className === "pokemon true") {
+            div.className = "pokemon false"
+        } else {
+            div.className = "pokemon true"
+        }
+    }
+
     render () {
 
         const fields = {
@@ -32,7 +41,7 @@ class Pokemon extends React.Component {
         }
 
         return (
-            <div className="pokemon">
+            <div onClick = {this.handleClick} className="pokemon true">
                 <ul>
                     {lis}
                 </ul>

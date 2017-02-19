@@ -7,6 +7,7 @@ ul {
     padding: 0px;
 }
 
+
 #container {
     display: flex;
     flex-direction: column;
@@ -19,14 +20,30 @@ ul {
     width: 80%;
 }
 
+#query {
+    padding: 2%;
+    width: 50%;
+    border:1px black solid;
+    display: flex;
+    justify-content: space-between;
+}
+
 .pokemon {
     border: 1px solid black;
     width: 30%;
     display: flex;
     justify-content: space-around;
     cursor: pointer;
+    user-select: none;
 }
 
+.false {
+    background-color: #ff9b9b
+}
+
+.true {
+    background-color: #C0D890
+}
 
 
 

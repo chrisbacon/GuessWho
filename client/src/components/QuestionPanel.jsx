@@ -42,11 +42,11 @@ class QuestionPanel extends React.Component {
 
     render () {
         return (
-            <form>
+            <form id="query">
                 <FieldSelector fieldNames={this.props.fieldObserver.getFieldNames()} selectField={this.selectField} />
                 <QuestionSelector selectQuestion={this.selectQuestion} selectedField={this.state.selectedField} />
                 <ParameterInput selectedField={this.state.selectedField} enterParameter={this.enterParameter}/>
-                <button onClick={this.handleClick}/>
+                <button onClick={this.handleClick}>???</button>
             </form>
             )
     }

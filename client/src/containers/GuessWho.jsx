@@ -61,8 +61,8 @@ class GuessWho extends React.Component {
     render() {
         return(
 
-            <div>
-                <AnswerPanel/>
+            <div id="container">
+                <AnswerPanel answer={this.state.answer}/>
                 <PokeBoard pokemons={this.state.pokemons}/>
                 <QuestionPanel getQuery = {this.getQuery} fieldObserver = {this.fieldObserver}/>
             </div>

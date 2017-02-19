@@ -32,7 +32,7 @@ class Pokemon extends React.Component {
         }
 
         return (
-            <div>
+            <div className="pokemon">
                 <ul>
                     {lis}
                 </ul>

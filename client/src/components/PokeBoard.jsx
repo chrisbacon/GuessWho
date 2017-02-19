@@ -18,7 +18,7 @@ class PokeBoard extends React.Component {
 
         return (
 
-            <div>
+            <div id="pokeBoard">
                 {pokeComps}
             </div>
 

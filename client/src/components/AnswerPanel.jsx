@@ -7,7 +7,29 @@ class AnswerPanel extends React.Component {
     }
 
     render () {
-        return <div/>
+
+        if (this.props.answer) {
+            return (
+                <div>
+
+                    <h3>Yes</h3>
+
+                </div>
+                )
+        } else if (this.props.answer === false) {
+            return (
+                <div>
+
+                    <h3>No</h3>
+
+                </div>
+                )
+        } else {
+            return (
+                <div/>
+                )
+        }
+        
     }
 
 }

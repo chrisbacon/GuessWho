@@ -11,8 +11,8 @@ class QuestionSelector extends React.Component {
 
     render() {
 
-        if (this.props.selectedFieldName) {
-            const field = this.props.fields[this.props.selectedFieldName]; 
+        if (this.props.selectedField) {
+            const field = this.props.selectedField
             const selectedType = field.type;
 
             const questions = {

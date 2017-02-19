@@ -9,8 +9,8 @@ class FieldSelector extends React.Component {
     }
 
     handleChange(event) {
-        const selectedField = event.target.value;
-        this.props.selectField(selectedField);
+        const selectedFieldName = event.target.value;
+        this.props.selectField(selectedFieldName);
     }
 
     render() {

@@ -15,6 +15,7 @@ class QuestionPanel extends React.Component {
         }
 
         this.selectField = this.selectField.bind(this)
+        this.selectQuestion = this.selectQuestion.bind(this)
     }
 
     selectField(field) {

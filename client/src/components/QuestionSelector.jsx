@@ -1,5 +1,7 @@
 import React from 'react';
 import ArrayQuestions from './ArrayQuestions.jsx'
+import NumberQuestions from './NumberQuestions.jsx'
+import TextQuestions from './TextQuestions.jsx'
 
 class QuestionSelector extends React.Component {
 
@@ -15,8 +17,8 @@ class QuestionSelector extends React.Component {
 
             const questions = {
                 array: ArrayQuestions,
-                number: ArrayQuestions,
-                text: ArrayQuestions
+                number: NumberQuestions,
+                text: TextQuestions
             }
 
             const SpecificQuestions = questions[selectedType]

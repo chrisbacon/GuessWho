@@ -8,7 +8,7 @@ class ArrayQuestions extends React.Component {
         this.questions = [{
             name: "is a", 
             func: function(secretValue, userGuess) {
-                return secretValue === userGuess
+                return secretValue.includes(userGuess)
                 }
             }];
     }
@@ -43,8 +43,6 @@ class ArrayQuestions extends React.Component {
         const options = this.questions.map(function(question, index) {
             return <option value={index} key={index}>{question.name}</option>
         })
-
-        console.log(this.questions)
 
         return(
 

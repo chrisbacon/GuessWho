@@ -15,7 +15,11 @@ class TextQuestions extends React.Component {
 
     handleChange(event) {
         const index = event.target.value
-        this.props.selectQuestion(this.questions[index]);
+        this.props.selectQuestion(this.questions[index].func);
+    }
+
+    componentDidMount() {
+        this.props.selectQuestion(this.questions[0].func);
     }
     
     render() {
@@ -23,9 +27,6 @@ class TextQuestions extends React.Component {
         const options = this.questions.map(function(question, index) {
             return <option value={index} key={index}>{question.name}</option>
         })
-
-        console.log(this.questions)
-
         return(
 
             <select onChange={this.handleChange.bind(this)}>

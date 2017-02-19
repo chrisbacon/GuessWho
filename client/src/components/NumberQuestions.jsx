@@ -21,7 +21,11 @@ class NumberQuestions extends React.Component {
 
     handleChange(event) {
         const index = event.target.value
-        this.props.selectQuestion(this.questions[index]);
+        this.props.selectQuestion(this.questions[index].func);
+    }
+
+    componentDidMount() {
+        this.props.selectQuestion(this.questions[0].func);
     }
     
     render() {

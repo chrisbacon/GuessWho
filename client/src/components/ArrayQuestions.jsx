@@ -8,9 +8,12 @@ class ArrayQuestions extends React.Component {
         this.questions = [{
             name: "is a", 
             func: function(secretValue, userGuess) {
-                return secretValue.includes(userGuess)
+                const index = secretValue.indexOf(userGuess)
+                return index>-1;
                 }
             }];
+
+            this.handleChange = this.handleChange.bind(this);
     }
 
     // const flatValues = this.props.values.reduce(function(array, value) {
@@ -35,7 +38,11 @@ class ArrayQuestions extends React.Component {
 
     handleChange(event) {
         const index = event.target.value
-        this.props.selectQuestion(this.questions[index]);
+        this.props.selectQuestion(this.questions[index].func);
+    }
+
+    componentDidMount() {
+        this.props.selectQuestion(this.questions[0].func);
     }
     
     render() {
@@ -46,7 +53,7 @@ class ArrayQuestions extends React.Component {
 
         return(
 
-            <select onChange={this.handleChange.bind(this)}>
+            <select onChange={this.handleChange}>
                 {options}
             </select>
 

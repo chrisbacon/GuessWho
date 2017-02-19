@@ -21,6 +21,13 @@ class GuessWho extends React.Component {
         }
 
         this.fieldObserver = new FieldObserver();
+        this.getQuery = this.getQuery.bind(this);
+    }
+
+    getQuery(fieldName, question, input) {
+        const field = this.state.hiddenPokemon[fieldName.toLowerCase()];
+        const answer = question(field.data, input);
+        this.setState({answer: answer});
     }
 
     getPokemon(id) {
@@ -38,7 +45,7 @@ class GuessWho extends React.Component {
 
                 pokemons.push(pokemon);
 
-                this.setState({pokemons: pokemons});
+                this.setState({pokemons: pokemons}, this.setState({hiddenPokemon: this.state.pokemons[0]}));
             }
         }.bind(this)
 
@@ -57,7 +64,7 @@ class GuessWho extends React.Component {
             <div>
                 <AnswerPanel/>
                 <PokeBoard pokemons={this.state.pokemons}/>
-                <QuestionPanel fieldObserver = {this.fieldObserver}/>
+                <QuestionPanel getQuery = {this.getQuery} fieldObserver = {this.fieldObserver}/>
             </div>
 
             )

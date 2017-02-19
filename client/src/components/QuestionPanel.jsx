@@ -11,6 +11,7 @@ class QuestionPanel extends React.Component {
 
         this.state = {
             selectedField: null,
+            selectedFieldName: "",
             selectedQuestion: null,
             enteredParameter: "" 
         }
@@ -18,19 +19,25 @@ class QuestionPanel extends React.Component {
         this.selectField = this.selectField.bind(this)
         this.selectQuestion = this.selectQuestion.bind(this)
         this.enterParameter = this.enterParameter.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
 
     selectField(fieldName) {
         const field = this.props.fieldObserver.getFieldRecords()[fieldName]
-        this.setState({selectedField: field})
+        this.setState({selectedField: field, selectedFieldName: fieldName})
     }
 
     selectQuestion(question) {
-        this.setState({selectQuestion: question})
+        this.setState({selectedQuestion: question})
     }
 
     enterParameter(parameter) {
-        this.setState({enteredParameter: paramter})
+        this.setState({enteredParameter: parameter})
+    }
+
+    handleClick(event) {
+        event.preventDefault();
+        this.props.getQuery(this.state.selectedFieldName, this.state.selectedQuestion, this.state.enteredParameter);
     }
 
     render () {
@@ -39,8 +46,7 @@ class QuestionPanel extends React.Component {
                 <FieldSelector fieldNames={this.props.fieldObserver.getFieldNames()} selectField={this.selectField} />
                 <QuestionSelector selectQuestion={this.selectQuestion} selectedField={this.state.selectedField} />
                 <ParameterInput selectedField={this.state.selectedField} enterParameter={this.enterParameter}/>
-                
-                <button></button>
+                <button onClick={this.handleClick}/>
             </form>
             )
     }

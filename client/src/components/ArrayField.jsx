@@ -3,7 +3,7 @@ import React from 'react';
 const ArrayField = function(props) {
 
         const lis = props.data.map(function(text, index) {
-            <li key={index}>{text}</li>
+            return <li key={index}>{text}</li>
         } )
 
         return (

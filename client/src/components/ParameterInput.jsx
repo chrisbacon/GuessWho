@@ -10,6 +10,13 @@ class ParameterInput extends React.Component {
             text: "text",
             number: "number"
         }
+
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(event) {
+        const value = event.target.value;
+        this.props.enterParameter(value);
     }
 
     render() {
@@ -17,7 +24,7 @@ class ParameterInput extends React.Component {
         if (this.props.selectedField) {
             return (
 
-                <input type={this.inputTypes[this.props.selectedField.type]}/>
+                <input onChange={this.handleChange} type={this.inputTypes[this.props.selectedField.type]}/>
 
                 )
         }

@@ -14,6 +14,7 @@ class Pokemon extends React.Component {
         const fields = {
             array: ArrayField,
             text: TextField,
+            number: TextField,
             image: ImageField
         }
 

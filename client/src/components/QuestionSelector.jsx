@@ -1,4 +1,5 @@
 import React from 'react';
+import ArrayQuestions from './ArrayQuestions.jsx'
 
 class QuestionSelector extends React.Component {
 
@@ -8,24 +9,34 @@ class QuestionSelector extends React.Component {
 
     render() {
 
-        // const options = {
-        //     array: arrayQuestions,
-        //     number: numberQuestions,
-        //     text: textQuestion
-        // }
+        if (this.props.selectedFieldName) {
+            const field = this.props.fields[this.props.selectedFieldName]; 
+            const selectedType = field.type;
 
-        // const SpecificOptions = options[this.prop.type]
+            const questions = {
+                array: ArrayQuestions,
+                number: ArrayQuestions,
+                text: ArrayQuestions
+            }
 
-        return(
+            const SpecificQuestions = questions[selectedType]
 
-            <select>
-               
-            </select>
+            return(
 
-            )
+               <SpecificQuestions selectQuestion={this.props.selectQuestion}/>
+
+                )
+
+        } else {
+            return (<select/>)
+        }
+
+        
+
+        
     }
 
 
 }
 
-export default QuestionSelector;
+export default QuestionSelector; 

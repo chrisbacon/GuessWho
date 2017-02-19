@@ -9,21 +9,28 @@ class QuestionPanel extends React.Component {
         super(props);
 
         this.state = {
-            selectedField: null
+            selectedFieldName: null,
+            selectedQuestion: null,
+            enteredParameter: "" 
         }
 
         this.selectField = this.selectField.bind(this)
     }
 
     selectField(field) {
-        this.setState({selectedField: field})
+        this.setState({selectedFieldName: field})
+    }
+
+    selectQuestion(question) {
+        this.setState({selectQuestion: question})
     }
 
     render () {
         return (
             <form>
-                <QuestionSelector fields={this.props.fieldObserver.getFieldRecords()}/>
                 <FieldSelector fieldNames={this.props.fieldObserver.getFieldNames()} selectField={this.selectField} />
+                <QuestionSelector selectQuestion={this.selectQuestion} selectedFieldName={this.state.selectedFieldName} fields={this.props.fieldObserver.getFieldRecords()}/>
+                
                 <button></button>
             </form>
             )
